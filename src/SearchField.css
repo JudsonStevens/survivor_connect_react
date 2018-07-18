@@ -4,7 +4,8 @@ div#form-container {
 
 div.ui.header {
   margin-top: 15% !important;
-  font-size: 3em !important;
+  font-size: 3.8em !important;
+  color: white;
 }
 
 form {

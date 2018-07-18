@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './Home.css';
 import './SearchField.css';
-import { Container, Grid } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import SearchField from './SearchField.js'
 
 class Home extends Component {
