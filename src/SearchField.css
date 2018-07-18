@@ -1,0 +1,20 @@
+div#form-container {
+  text-align: center;
+}
+
+div.ui.header {
+  margin-top: 15% !important;
+  font-size: 3em !important;
+}
+
+form {
+  overflow: hidden;
+  display: inline-block;
+  top: 5%;
+  position: relative;
+  width: 85%;
+}
+
+div.ui.icon.input {
+  width: 100%;
+}
