@@ -81,8 +81,8 @@ class SearchField extends Component {
           {/* <input type="submit" value="Submit" /> */}
         </form>
         { !this.state.loading && redirect && <Redirect push to={{
-           pathname: '/search_results',
-           state: { info: this.state.newData }
+          pathname: '/search_results',
+          state: { info: this.state.newData }
           }} />}
       </Container>
     )
