@@ -57,7 +57,7 @@ class SearchField extends Component {
 
   handleSubmit(event) {
     const search_location = this.state.value;
-    const search_url = `http://127.0.0.1:3001/api/lawyers?q=${search_location}`
+    const search_url = `survivor-connect-2.us-west-2.elasticbeanstalk.com/api/lawyers?q=${search_location}`
 
     fetch(search_url).then( response => {return response.json()}).then (json => this.storeInformation(json, false));
     // this.props.onSearchComplete(this.state.newData)
