@@ -21,10 +21,6 @@ div.ui.container.grid {
 }
 
 #inset-column {
-  /* background-color: rgba(206, 206, 206, 0.9);
-  border: 1px solid grey;
-  border-radius: 15px; */
   width: 80%;
-  /* box-shadow: 15px 15px 25px rgb(129, 129, 129); */
 }
 

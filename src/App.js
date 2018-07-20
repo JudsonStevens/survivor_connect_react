@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from './Home'
+import Search from './Search'
 import NotFound from './NotFound'
+import SearchResults from './SearchResults'
 
 class App extends Component {
   render() {
-    return <Router>
-      <Switch>
-        <Route path='/index.html' exact component={Home} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
+    return (
+      <Router>
+        <Switch>
+          <Route path='/' exact component={Search} />
+          <Route path='/index.html' exact component={Search} />
+          <Route path='/search_results' exact component={SearchResults} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    )
   }
 }
 
