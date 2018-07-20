@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './Home.css';
-import './SearchField.css';
-import { Container, Grid } from 'semantic-ui-react'
-import SearchField from './SearchField.js'
+import './Layout.css';
+import { Grid } from 'semantic-ui-react';
 
-class Home extends Component {
+class Layout extends Component {
   render() {
     return (
       <Grid centered container>
@@ -13,7 +10,9 @@ class Home extends Component {
         </Grid.Row>
         <Grid.Row stretched centered>
           <Grid.Column id="inset-column">
-            <SearchField />
+            <div className="Center">
+              {this.props.center}
+            </div>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -23,4 +22,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Layout

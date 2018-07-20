@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(./home_background_image.jpg);
+  background-image: url(./second_home_background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -21,10 +21,6 @@ div.ui.container.grid {
 }
 
 #inset-column {
-  background-color: rgba(206, 206, 206, 0.9);
-  border: 5px solid grey;
-  border-radius: 15px;
   width: 80%;
-  box-shadow: 15px 15px 25px rgb(129, 129, 129);
 }
 
