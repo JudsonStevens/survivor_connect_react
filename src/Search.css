@@ -14,8 +14,9 @@
 } */
 
 .about-text {
-  height: 500px;
-  background-color: white;
+  height: 300px;
+  background: linear-gradient(rgba(80, 49, 119, 0.774), rgba(182, 147, 228, 0.774));
+  box-shadow: 0 0 20px rgb(69, 48, 119);
 }
 
 .parallax {
