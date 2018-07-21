@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Search from './Search'
 import NotFound from './NotFound'
-import Donate from './Donate'
+import SupportPage from './SupportPage'
 import SearchResults from './SearchResults'
 
 class App extends Component {
