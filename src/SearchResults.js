@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { Container, Header, Grid, Card } from 'semantic-ui-react';
 import './SearchResults.css'
-// import SearchField from './SearchField'
 
 class SearchResults extends Component {
   render() {
     return (
       <div class="results-body-div">
         <Grid centered container>
-          <Grid.Row>
-          </Grid.Row>
           <Grid.Row stretched centered>
             <Grid.Column id="inset-column">
-              {/* <SearchField onSearchComplete={this.searchComplete}/> */}
-              <Container>
+              <Container id="results-container">
                 <Header id="result-header">
                   Search Results
                 </Header>
