@@ -3,7 +3,6 @@ import './Search.css';
 import './SearchField.css';
 import { Grid } from 'semantic-ui-react'
 import SearchField from './SearchField'
-import SearchResults from './SearchResults'
 
 class Search extends Component {
   constructor(props) {
@@ -20,21 +19,26 @@ class Search extends Component {
 
   render() {
     return (
-      <Grid centered container>
-        <Grid.Row>
-        </Grid.Row>
-        <Grid.Row stretched centered>
-          <Grid.Column id="inset-column">
-            <SearchField onSearchComplete={this.searchComplete}/>
-            {
-              this.state.searchData !== '{"new": "fake"}' &&
-              <SearchResults data={this.state.searchData} />
-            }
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-        </Grid.Row>
-      </Grid>
+      <div class="home-page">
+        <div class="parallax">
+          <Grid centered container>
+            <Grid.Row>
+            </Grid.Row>
+            <Grid.Row stretched centered>
+              <Grid.Column id="inset-column">
+                <SearchField onSearchComplete={this.searchComplete} />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+            </Grid.Row>
+          </Grid>
+        </div>
+        <div class="about-text">
+          <h1> Hello </h1>
+        </div>
+        <div class="second-parallax">
+        </div>
+      </div>
     );
   }
 }
