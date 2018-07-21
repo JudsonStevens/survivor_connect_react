@@ -1,0 +1,15 @@
+div#form-container {
+    text-align: center;
+}
+
+div.ui.header {
+    margin-top: 15% !important;
+}
+
+form {
+    overflow: hidden;
+    display: inline-block;
+    top: 5%;
+    position: relative;
+    width: 85%;
+}
