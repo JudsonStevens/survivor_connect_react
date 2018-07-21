@@ -13,7 +13,7 @@ class App extends Component {
           <Route path='/' exact component={Search} />
           <Route path='/index.html' exact component={Search} />
           <Route path='/search_results' exact component={SearchResults} />
-          <Route path='/donate' exact component={Donate} />
+          <Route path='/support' exact component={SupportPage} />
           <Route component={NotFound} />
         </Switch>
       </Router>
