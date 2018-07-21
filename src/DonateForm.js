@@ -22,27 +22,12 @@ class DonateForm extends Component {
 
   render() {
     return (
-    <Grid container columns={3}>
+      <Grid container columns={3}>
       <Grid.Row>
-        <h1>Support Survivor Connect</h1>
       </Grid.Row>
       <Grid.Row stretched centered>
-        <Grid.Column>
-          {/* <Container>  
-            <Card id='donate_card'>
-            <Card.Header>
-              Donate
-            </Card.Header>
-            <Card.Description>
-              Your generosity helps us maintain this site and help survivors.
-            </Card.Description>
-            <Card.Content>
-                <Button type='submit'>Pay with Paypal</Button>
-            </Card.Content>
-            </Card>
-        </Container> */}
-      </Grid.Column>
-    </Grid.Row>
+        <h1>Support Survivor Connect</h1>
+      </Grid.Row>
     
     <Card.Group container columns={2}>
       <Card id='donate_card'>
@@ -60,7 +45,7 @@ class DonateForm extends Component {
         </Card.Content>
           <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
+          <Button basic color='black'>
             Donate with PayPal
           </Button>
         </div>
@@ -68,7 +53,7 @@ class DonateForm extends Component {
       </Card>
 
 
-    <Card>
+    <Card id='advocate_card'>
       <Card.Content>
         <Image floated='right' size='mini' src={require("./law.png")} />
         <Card.Header>Advocate</Card.Header>
@@ -78,14 +63,14 @@ class DonateForm extends Component {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <div className='ui two buttons'>
-          <Button basic color='green'>
+        <div className='ui buttons'>
+          <Button basic color='black'>
             Request a law practice profile
           </Button>
         </div>
       </Card.Content>
     </Card>
-    <Card>
+    <Card id='contact_card'>
       <Card.Content>
         <Image floated='right' size='mini' src={require("./contact.png")}/>
         <Card.Header>Contact</Card.Header>
@@ -96,13 +81,13 @@ class DonateForm extends Component {
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
+          <Button basic color='black'>
             Get in touch
           </Button>
         </div>
       </Card.Content>
     </Card>
-    <Card>
+    <Card id='share_card'>
       <Card.Content>
         <Image floated='right' size='mini' src={require("./social-media.png")} />
         <Card.Header>Share</Card.Header>
@@ -111,7 +96,7 @@ class DonateForm extends Component {
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
+          <Button basic color='black'>
             Share
           </Button>
         </div>
