@@ -4,7 +4,9 @@ import DonateForm from './DonateForm'
 
 class Donate extends Component {
     render() {
-        return <DonateForm />
+        return(
+            <DonateForm />
+        );
     }
 }
 ReactDOM.render(<DonateForm />, document.getElementById('root'));
