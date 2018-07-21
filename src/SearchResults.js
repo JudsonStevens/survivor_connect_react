@@ -31,6 +31,11 @@ class SearchResults extends Component {
                         <Card.Description>
                           {info.bio_info}
                         </Card.Description>
+                        <br>
+                        </br>
+                        <Card.Content extra>
+                          <p>Reach out to this lawyer here</p>
+                        </Card.Content>
                       </Card.Content>    
                     </Card>)
                   }
