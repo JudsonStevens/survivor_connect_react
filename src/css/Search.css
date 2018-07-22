@@ -17,7 +17,7 @@
 }
 
 .parallax {
-  background: linear-gradient(rgba(252, 250, 250, 0.3), rgba(235, 235, 235, 0.3)), url(./magnifying-glass-modified.jpg);
+  background: linear-gradient(rgba(252, 250, 250, 0.3), rgba(235, 235, 235, 0.3)), url(../images/magnifying-glass-modified.jpg);
   height: 110%;
 
   background-attachment: fixed;
@@ -27,7 +27,7 @@
 }
 
 .second-parallax {
-  background: linear-gradient(rgba(252, 250, 250, 0.3), rgba(235, 235, 235, 0.3)), url(./night-sky.jpg);
+  background: linear-gradient(rgba(252, 250, 250, 0.3), rgba(235, 235, 235, 0.3)), url(../images/night-sky.jpg);
   height: 110%;
 
   background-attachment: fixed;

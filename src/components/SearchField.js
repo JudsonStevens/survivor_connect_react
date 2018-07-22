@@ -29,18 +29,6 @@ class SearchField extends Component {
     })
   }
 
-  // renderRedirect = () => {
-  //   return (
-  //     this.state.redirect &&
-  //     <Redirect to='/search_results'
-  //     /* {{
-  //       pathname: '/search_results',
-  //       state: { info: this.state.newData }
-  //       }} */
-  //     />
-  //     )
-  // }
-
   storeInformation = (info, finished) => {
     
     this.setState({
@@ -59,7 +47,6 @@ class SearchField extends Component {
 
     fetch(search_url).then( response => {return response.json()}).then (json => this.storeInformation(json, false));
     this.setRedirect();
-    // this.renderRedirect();
     event.preventDefault();
   }
 
@@ -78,7 +65,6 @@ class SearchField extends Component {
             size='massive'
             placeholder='Enter your address or a zip code' 
           />
-          {/* <input type="submit" value="Submit" /> */}
         </form>
         { !this.state.loading && redirect && <Redirect push to={{
           pathname: '/search_results',
@@ -90,4 +76,3 @@ class SearchField extends Component {
 }
 
 export default SearchField
-// this.props.searchComplete(data)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './donate.css';
+import '../css/Donate.css';
 import { Container, Grid } from 'semantic-ui-react'
-import DonateForm from './DonateForm.js'
+import DonateForm from '../components/DonateForm.js'
 
 class Donate extends Component {
   render() {
