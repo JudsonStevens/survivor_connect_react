@@ -30,11 +30,12 @@ class SearchField extends Component {
   }
 
   storeInformation = (info, finished) => {
-    
     this.setState({
       newData: info,
       loading: finished
     });
+    console.log(this.state.newData)
+    console.log(this.state.newData.length)
   }
 
   handleSearchChange(event) {
@@ -43,8 +44,9 @@ class SearchField extends Component {
 
   handleSubmit(event) {
     const search_location = this.state.value;
-    const search_url = `http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/lawyers?q=${search_location}`
-
+    const search_url = `http://localhost:3001/api/lawyers?q=${search_location}`
+    // http://survivor-connect.s3-website.us-east-2.amazonaws.comhttp://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/lawyers?q=${search_location}
+    console.log(this.state.value)
     fetch(search_url).then( response => {return response.json()}).then (json => this.storeInformation(json, false));
     this.setRedirect();
     event.preventDefault();
@@ -66,7 +68,7 @@ class SearchField extends Component {
             placeholder='Enter your address or a zip code' 
           />
         </form>
-        { !this.state.loading && redirect && <Redirect push to={{
+        { !this.state.loading && !(this.state.newData.length === 0) && redirect && <Redirect push to={{
           pathname: '/search_results',
           state: { info: this.state.newData }
           }} />}

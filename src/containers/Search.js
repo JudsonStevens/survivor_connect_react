@@ -7,8 +7,8 @@ import SearchField from '../components/SearchField'
 class Search extends Component {
   render() {
     return (
-      <div class="home-page">
-        <div class="parallax">
+      <div className="home-page">
+        <div className="parallax">
           <Grid centered container>
             <Grid.Row>
             </Grid.Row>
@@ -21,10 +21,10 @@ class Search extends Component {
             </Grid.Row>
           </Grid>
         </div>
-        <div class="about-text">
+        <div className="about-text">
           <h1> Hello </h1>
         </div>
-        <div class="second-parallax">
+        <div className="second-parallax">
         </div>
       </div>
     );
