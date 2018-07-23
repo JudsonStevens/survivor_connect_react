@@ -4,6 +4,10 @@ import { Redirect } from 'react-router-dom'
 import '../css/ContactForm.css'
 
 class ContactForm extends Component {
+  constructor(props) {
+    super(props);
+
+  }
   render() {
     return (
        <Container class='contact-container'>
@@ -13,6 +17,10 @@ class ContactForm extends Component {
                 <Form.Field id='name_field'>
                     <label id='name_field_label'>Please enter your name:</label>
                     <input placeholder='Name'/>
+                </Form.Field>
+                <Form.Field id='name_field'>
+                    <label id='name_field_label'>Please enter your email:</label>
+                    <input placeholder='Email'/>
                 </Form.Field>
                 </div>
                 <div id='test2' class='eight wide field'>
