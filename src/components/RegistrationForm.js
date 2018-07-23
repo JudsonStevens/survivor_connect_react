@@ -26,6 +26,8 @@ class RegistrationForm extends Component {
     }
     };
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   this.stateOptions = [
     { key: 'AL', value: 'AL', text: 'Alabama' },
     { key: 'AK', value: 'AK', text: 'Alaska' },
@@ -84,7 +86,8 @@ class RegistrationForm extends Component {
     return {
       firstName:      info.firstName.length === 0,
       lastName:       info.lastName.length === 0,
-      email:          info.streetAddress.length === 0,
+      email:          !info.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i),
+      streetAddress:  info.streetAddress.length === 0,
       city:           info.city.length === 0,
       state:          info.state.length === 0,
       zipCode:        info.zipCode.length === 0,
@@ -104,12 +107,22 @@ class RegistrationForm extends Component {
     this.setState({ state: data.value });
   }
 
-  handleSubmit = (evt) => {
-    if (!this.canBeSubmitted()) {
-      evt.preventDefault();
-      return;
-    }
-    console.log(this.state);
+  async handleSubmit(evt) {
+    const rawResponse = await fetch('http://localhost:3001/api/register_lawyer', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain,',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: (this.state.firstName + " " + this.state.lastName),
+        email: this.state.email,
+        address: (this.state.streetAddress + ", " + this.state.city + ", " + this.state.state + " " + this.state.zipCode),
+        phone_number: this.state.phoneNumber
+      })
+    });
+    const response = await rawResponse.json();
+    console.log(response);
   }
 
   canBeSubmitted() {
@@ -156,15 +169,15 @@ class RegistrationForm extends Component {
             <Form.Input required className={shouldMarkError('phoneNumber') ? "error" : ""} onBlur={this.handleBlur('phoneNumber')} label='Phone Number' placeholder='Phone Number' name='phoneNumber' value={phoneNumber} onChange={this.handleChange} width={6} />
           </Form.Group>
           <Form.Group>
-            <Form.Input required className={shouldMarkError('streetAddress') ? "error" : ""} onBlur={this.handleBlur()} label='Street Address' placeholder='Street Address' name='streetAddress' value={streetAddress} onChange={this.handleChange} width={16} />
+            <Form.Input required className={shouldMarkError('streetAddress') ? "error" : ""} onBlur={this.handleBlur('streetAddress')} label='Street Address' placeholder='Street Address' name='streetAddress' value={streetAddress} onChange={this.handleChange} width={16} />
           </Form.Group>
           <Form.Group>
-            <Form.Input required className={shouldMarkError('city') ? "error" : ""} onBlur={this.handleBlur()} label='City' placeholder='City' name='city' value={city} onChange={this.handleChange} width={9} />
+            <Form.Input required className={shouldMarkError('city') ? "error" : ""} onBlur={this.handleBlur('city')} label='City' placeholder='City' name='city' value={city} onChange={this.handleChange} width={9} />
             <Form.Group id='state-field'>
               <label id='state-label'>State</label>
               <Dropdown placeholder='State' value={state} search selection options={stateOptions} width={2} onChange={this.handleChangeState} />
             </Form.Group>
-            <Form.Input required className={shouldMarkError('zipCode') ? "error" : ""} onBlur={this.handleBlur()} label='Zip Code' placeholder='Zip Code' name='zipCode' value={zipCode} onChange={this.handleChange} width={4} />
+            <Form.Input required className={shouldMarkError('zipCode') ? "error" : ""} onBlur={this.handleBlur('zipCode')} label='Zip Code' placeholder='Zip Code' name='zipCode' value={zipCode} onChange={this.handleChange} width={4} />
           </Form.Group>
           <Form.Group>
           </Form.Group>
