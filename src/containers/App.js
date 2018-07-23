@@ -4,6 +4,7 @@ import Search from './Search'
 import NotFound from './NotFound'
 import SupportPage from './SupportPage'
 import SearchResults from './SearchResults'
+import Contact from './Contact'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Route path='/index.html' exact component={Search} />
           <Route path='/search_results' exact component={SearchResults} />
           <Route path='/support' exact component={SupportPage} />
+          <Route path='/contact' exact component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </Router>

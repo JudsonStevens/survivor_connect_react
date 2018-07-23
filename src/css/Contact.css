@@ -1,0 +1,46 @@
+#root {
+    height: 100%;
+}
+
+.contact-body-div {
+    background: linear-gradient(rgba(252, 250, 250, 0.2), rgba(235, 235, 235, 0.2)), url(../images/contact_background_image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+div.ui.container.grid {
+    height: 100%;
+}
+
+.row {
+    height: 15%;
+    width: 50%;
+}
+
+#message-header {
+    padding: 3em;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(3, 3, 3);
+}
+
+#name_field_label {
+    color: white;
+    float: left;
+    font-size: 1em;
+    text-shadow: 2px 2px 2px rgb(3, 3, 3);
+}
+
+#contact-header {
+    padding: 3em;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(3, 3, 3);
+}
+
+#test {
+    margin: auto auto 1em auto;
+}
+#test2 {
+    margin: auto auto 1em auto;
+}
