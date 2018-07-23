@@ -5,7 +5,7 @@ import '../css/SearchResults.css'
 class SearchResults extends Component {
   render() {
     return (
-      <div class="results-body-div">
+      <div className="results-body-div">
         <Grid centered container>
           <Grid.Row stretched centered>
             <Grid.Column id="inset-column">
