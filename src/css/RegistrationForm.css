@@ -1,0 +1,15 @@
+#state-label {
+  margin-bottom: 4px;
+}
+
+label {
+  color: white !important;
+  text-align: left !important;
+  font-size: 1.3em !important;
+}
+
+#state-field {
+  flex-direction: column;
+  margin-right: 10px;
+  margin-left: 10px;
+}

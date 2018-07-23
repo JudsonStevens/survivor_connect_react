@@ -5,18 +5,6 @@ import { Grid } from 'semantic-ui-react'
 import SearchField from '../components/SearchField'
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { searchData: '{"new": "fake"}' }
-  }
-
-  searchComplete = (data) => {
-    this.setState({
-      searchData: data
-    })
-  }
-
   render() {
     return (
       <div class="home-page">
@@ -26,7 +14,7 @@ class Search extends Component {
             </Grid.Row>
             <Grid.Row stretched centered>
               <Grid.Column id="inset-column">
-                <SearchField onSearchComplete={this.searchComplete} />
+                <SearchField />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
