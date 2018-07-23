@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Header, Grid, Card } from 'semantic-ui-react';
-import './SearchResults.css'
+import '../css/SearchResults.css'
 
 class SearchResults extends Component {
   render() {

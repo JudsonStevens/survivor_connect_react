@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Header, Grid, Card, Button, Image } from 'semantic-ui-react'
-import './SupportPage.css'
+import '../css/SupportPage.css'
 
 class SupportPage extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class SupportPage extends Component {
                 <Card.Group container columns={2}>
                   <Card id='donate_card'>
                     <Card.Content>
-                    <Image floated='right' size='mini' src={require("./heart.png")} />
+                    <Image floated='right' size='mini' src={require("../images/heart.png")} />
                       <Card.Header>
                         Donate
                       </Card.Header>
@@ -54,7 +54,7 @@ class SupportPage extends Component {
                   </Card>
                   <Card id='advocate_card'>
                     <Card.Content>
-                      <Image floated='right' size='mini' src={require("./law.png")} />
+                      <Image floated='right' size='mini' src={require("../images/law.png")} />
                       <Card.Header>Advocate</Card.Header>
                       <Card.Meta>We are always looking for legal professionals to add to our network.</Card.Meta>
                       <Card.Description>
@@ -71,7 +71,7 @@ class SupportPage extends Component {
                   </Card>
                   <Card id='contact_card'>
                     <Card.Content>
-                      <Image floated='right' size='mini' src={require("./contact.png")}/>
+                      <Image floated='right' size='mini' src={require("../images/contact.png")}/>
                       <Card.Header>Contact</Card.Header>
                       <Card.Meta>Send us a message or join our mailing list</Card.Meta>
                       <Card.Description>
@@ -88,7 +88,7 @@ class SupportPage extends Component {
                   </Card>
                   <Card id='share_card'>
                     <Card.Content>
-                      <Image floated='right' size='mini' src={require("./social-media.png")} />
+                      <Image floated='right' size='mini' src={require("../images/social-media.png")} />
                       <Card.Header>Share</Card.Header>
                       <Card.Meta>By sharing our app, you're helping us reach more survivors and more service providers </Card.Meta>
                       <Card.Description>Click below to share Survivor Connect on social media.</Card.Description>

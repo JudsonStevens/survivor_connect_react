@@ -3,7 +3,7 @@ div.ui.container {
 }
 
 .results-body-div {
-  background: linear-gradient(rgba(252, 250, 250, 0.2), rgba(235, 235, 235, 0.2)), url(./smoke-rescue.jpg);
+  background: linear-gradient(rgba(252, 250, 250, 0.2), rgba(235, 235, 235, 0.2)), url(../images/smoke-rescue.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;

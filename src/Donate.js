@@ -1,13 +1,20 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import DonateForm from './DonateForm'
+import React, { Component } from 'react';
+import './donate.css';
+import { Container, Grid } from 'semantic-ui-react'
+import DonateForm from './DonateForm.js'
 
 class Donate extends Component {
-    render() {
-        return(
-            <DonateForm />
-        );
-    }
+  render() {
+  return (
+    <Grid centered container>
+      <Grid.Row stretched centered>
+        <Grid.Column id='inset-column'>
+          <DonateForm />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+   );
+  }
 }
-ReactDOM.render(<DonateForm />, document.getElementById('root'));
+
 export default Donate
