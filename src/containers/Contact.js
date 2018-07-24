@@ -5,16 +5,16 @@ import '../css/Contact.css'
 
 
 
+
 class Contact extends Component {
   render() {
     return (
-      <div class='contact-body-div'>
+      <div className='contact-body-div'>
         <Grid centered container>
           <Grid.Row stretched centered>
             <Grid.Column id='inset-column'>
 
                 <ContactForm />
-             
             </Grid.Column>
           </Grid.Row>
         </Grid>
