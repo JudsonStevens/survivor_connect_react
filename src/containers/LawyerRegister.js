@@ -6,7 +6,7 @@ import RegistrationForm from '../components/RegistrationForm'
 class LawyerRegister extends Component {
   render() {
     return (
-      <div className="results-body-div">
+      <div className="register-body-div">
         <Grid centered container>
           <Grid.Row stretched centered>
             <Grid.Column id="inset-column">

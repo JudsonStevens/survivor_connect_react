@@ -14,6 +14,8 @@ class RegistrationForm extends Component {
     state:                  '',
     zipCode:                '',
     phoneNumber:            '',
+    password:               '',
+    passwordConfirmation:   '',
     touched: {
       firstName:            false,
       lastName:             false,
@@ -22,7 +24,9 @@ class RegistrationForm extends Component {
       city:                 false,
       state:                false,
       phoneNumber:          false,
-      zipCode:              false
+      zipCode:              false,
+      password:             false,
+      passwordConfirmation: false
     }
     };
 
@@ -84,14 +88,16 @@ class RegistrationForm extends Component {
 
   validate = (info) => {
     return {
-      firstName:      info.firstName.length === 0,
-      lastName:       info.lastName.length === 0,
-      email:          !info.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i),
-      streetAddress:  info.streetAddress.length === 0,
-      city:           info.city.length === 0,
-      state:          info.state.length === 0,
-      zipCode:        info.zipCode.length === 0,
-      phoneNumber:    info.phoneNumber.length === 0
+      firstName:            info.firstName.length === 0,
+      lastName:             info.lastName.length === 0,
+      email:                !info.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i),
+      streetAddress:        info.streetAddress.length === 0,
+      city:                 info.city.length === 0,
+      state:                info.state.length === 0,
+      zipCode:              info.zipCode.length === 0,
+      phoneNumber:          info.phoneNumber.length === 0,
+      password:             info.password.length < 6,
+      passwordConfirmation: info.passwordConfirmation !== info.password
     }
   }
 
@@ -108,7 +114,7 @@ class RegistrationForm extends Component {
   }
 
   async handleSubmit(evt) {
-    const rawResponse = await fetch('http://localhost:3001/api/register_lawyer', {
+    const rawResponse = await fetch('http://localhost:3001/api/lawyers', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain,',
@@ -118,7 +124,9 @@ class RegistrationForm extends Component {
         name: (this.state.firstName + " " + this.state.lastName),
         email: this.state.email,
         address: (this.state.streetAddress + ", " + this.state.city + ", " + this.state.state + " " + this.state.zipCode),
-        phone_number: this.state.phoneNumber
+        phone_number: this.state.phoneNumber,
+        password: this.state.password,
+        password_confirmation: this.state.passwordConfirmation
       })
     });
     const response = await rawResponse.json();
@@ -140,7 +148,9 @@ class RegistrationForm extends Component {
       city, 
       state, 
       zipCode,
-      phoneNumber
+      phoneNumber,
+      password,
+      passwordConfirmation
     } = this.state
 
     const shouldMarkError = (field) => {
@@ -158,26 +168,33 @@ class RegistrationForm extends Component {
       <Container id="registration-container">
         <Header id='registration-header'>
           Fill in your information in order to create an account.
+          All fields are required to create your account
         </Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths={2}>
-            <Form.Input required className={shouldMarkError('firstName') ? "error" : ""} onBlur={this.handleBlur('firstName')} label="First Name" placeholder='First Name' name='firstName' value={firstName} onChange={this.handleChange} width={8} />
-            <Form.Input required className={shouldMarkError('lastName') ? "error" : ""} onBlur={this.handleBlur('lastName')} label="Last Name" placeholder='Last Name' name='lastName' value={lastName} onChange={this.handleChange} width={8} />
+            <Form.Input className={shouldMarkError('firstName') ? "error" : ""} onBlur={this.handleBlur('firstName')} label="First Name" placeholder='First Name' name='firstName' value={firstName} onChange={this.handleChange} width={8} />
+            <Form.Input className={shouldMarkError('lastName') ? "error" : ""} onBlur={this.handleBlur('lastName')} label="Last Name" placeholder='Last Name' name='lastName' value={lastName} onChange={this.handleChange} width={8} />
           </Form.Group>
           <Form.Group>
-            <Form.Input required className={shouldMarkError('email') ? "error" : ""} onBlur={this.handleBlur('email')} label='Email' placeholder='Email' name='email' value={email} onChange={this.handleChange} width={10} />
-            <Form.Input required className={shouldMarkError('phoneNumber') ? "error" : ""} onBlur={this.handleBlur('phoneNumber')} label='Phone Number' placeholder='Phone Number' name='phoneNumber' value={phoneNumber} onChange={this.handleChange} width={6} />
+            <Form.Input className={shouldMarkError('email') ? "error" : ""} onBlur={this.handleBlur('email')} label='Email' placeholder='Email' name='email' value={email} onChange={this.handleChange} width={16} />
           </Form.Group>
           <Form.Group>
-            <Form.Input required className={shouldMarkError('streetAddress') ? "error" : ""} onBlur={this.handleBlur('streetAddress')} label='Street Address' placeholder='Street Address' name='streetAddress' value={streetAddress} onChange={this.handleChange} width={16} />
+            <Form.Input type='password' className={shouldMarkError('password') ? "error" : ""} onBlur={this.handleBlur('password')} label="Password" placeholder="Password" name='password' value={password} onChange={this.handleChange} width={8} />
+            <Form.Input type='password' className={shouldMarkError('passwordConfirmation') ? "error" : ""} onBlur={this.handleBlur('passwordConfirmation')} label="Password Confirmation" placeholder="Password" name='passwordConfirmation' value={passwordConfirmation} onChange={this.handleChange} width={8} /> 
           </Form.Group>
           <Form.Group>
-            <Form.Input required className={shouldMarkError('city') ? "error" : ""} onBlur={this.handleBlur('city')} label='City' placeholder='City' name='city' value={city} onChange={this.handleChange} width={9} />
+            <Form.Input className={shouldMarkError('phoneNumber') ? "error" : ""} onBlur={this.handleBlur('phoneNumber')} label='Phone Number' placeholder='Phone Number' name='phoneNumber' value={phoneNumber} onChange={this.handleChange} width={6} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Input className={shouldMarkError('streetAddress') ? "error" : ""} onBlur={this.handleBlur('streetAddress')} label='Street Address' placeholder='Street Address' name='streetAddress' value={streetAddress} onChange={this.handleChange} width={16} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Input className={shouldMarkError('city') ? "error" : ""} onBlur={this.handleBlur('city')} label='City' placeholder='City' name='city' value={city} onChange={this.handleChange} width={9} />
             <Form.Group id='state-field'>
               <label id='state-label'>State</label>
               <Dropdown placeholder='State' value={state} search selection options={stateOptions} width={2} onChange={this.handleChangeState} />
             </Form.Group>
-            <Form.Input required className={shouldMarkError('zipCode') ? "error" : ""} onBlur={this.handleBlur('zipCode')} label='Zip Code' placeholder='Zip Code' name='zipCode' value={zipCode} onChange={this.handleChange} width={4} />
+            <Form.Input className={shouldMarkError('zipCode') ? "error" : ""} onBlur={this.handleBlur('zipCode')} label='Zip Code' placeholder='Zip Code' name='zipCode' value={zipCode} onChange={this.handleChange} width={4} />
           </Form.Group>
           <Form.Group>
           </Form.Group>
