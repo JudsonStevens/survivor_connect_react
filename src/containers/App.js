@@ -5,6 +5,7 @@ import NotFound from './NotFound'
 import SupportPage from './SupportPage'
 import SearchResults from './SearchResults'
 import LawyerRegister from './LawyerRegister'
+import Contact from '../containers/Contact'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path='/search_results' exact component={SearchResults} />
           <Route path='/support' exact component={SupportPage} />
           <Route path='/lawyer_register' exact component={LawyerRegister} />
+          <Route path='/contact' exact component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </Router>
