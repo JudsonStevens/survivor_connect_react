@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Container } from 'semantic-ui-react';
+import { Form, Button, Container, Input } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom'
 import '../css/Contact.css'
 
@@ -42,7 +42,8 @@ class ContactForm extends Component {
   }
 
   async handleSubmit(evt) {
-    const rawResponse = await fetch('http://localhost:3000/contact', {
+    console.log(this.state.message)
+    const rawResponse = await fetch('http://localhost:3001/api/contact', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain,',
@@ -51,10 +52,11 @@ class ContactForm extends Component {
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
-        message: this.state.message
+        message_content: this.state.message
       })
     });
     const response = await rawResponse.json();
+   
     console.log(response);
   }
 
@@ -85,22 +87,19 @@ class ContactForm extends Component {
         return (
           <Container className='contact-container'>
               <h3 id='contact-header'> Send us a message and we will be in touch soon. </h3>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
                     <div id='test' className='eight wide field'>
-                    <Form.Field id='name_field'>
-                        <label id='name_field_label'>Please enter your name:</label>
-                        <input placeholder='Name'/>
-                    </Form.Field>
-                    <Form.Field id='name_field'>
-                        <label id='name_field_label'>Please enter your email:</label>
-                        <input placeholder='Email'/>
-                    </Form.Field>
+                    <Form.Input required className={shouldMarkError('name') ? "error" : ""} onBlur={this.handleBlur('name')} label="Please enter your name:" placeholder="Name" name="name" value={name} onChange={this.handleChange}>
+                    </Form.Input>
+                    <Form.Input required className={shouldMarkError('email') ? "error" : ""} onBlur={this.handleBlur('email')} label="Please enter your email:" placeholder="Email" name="email" value={email} onChange={this.handleChange}>
+                    </Form.Input>
                     </div>
-                    <div id='test2' className='eight wide field'>
-                    <Form.TextArea id='message_field' placeholder='Message' rows="15">
+                    <div id='message-box-div' className='eight wide field'>
+                    <Form.TextArea required rows="15" className={shouldMarkError('message') ? "error" : ""} onBlur={this.handleBlur('message')} placeholder="Message" name="message" value={message} onChange={this.handleChange}>
                     </Form.TextArea>
                     </div>
-                    <Button type='submit'>Submit</Button>
+                    <Form.Button disabled={isDisabled} content='Submit'>
+                    </Form.Button>
               </Form>
           </Container>
         // </div>

@@ -23,7 +23,7 @@ h1 {
 }
 
 #donate_card {
-  background-color: rgba(215, 183, 185, 0.945);
+  background-color: rgba(242, 223, 243, 0.932);
   box-shadow: 0px 0px 15px rgb(3, 3, 3);
 }
 
@@ -33,12 +33,12 @@ h1 {
 }
 
 #share_card {
-  background-color: rgba(203, 207, 222, 0.938);
+  background-color: rgba(242, 223, 243, 0.932);
   box-shadow: 0px 0px 15px rgb(3, 3, 3);
 }
 
 #contact_card {
-  background-color: rgba(255, 255, 255, 0.932);
+  background-color: rgba(242, 223, 243, 0.932);
   box-shadow: 0px 0px 15px rgb(3, 3, 3);
 }
   
