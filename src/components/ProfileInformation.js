@@ -22,7 +22,7 @@ class ProfileInformation extends Component {
 
   componentWillMount() {
     let jwt = sessionStorage.getItem('jwt')
-    fetch(`http://localhost:3001/api/user/${this.props.name}`, {
+    fetch(`http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/user/${this.props.name}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',

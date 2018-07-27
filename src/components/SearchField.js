@@ -42,8 +42,8 @@ class SearchField extends Component {
 
   handleSubmit(event) {
     const search_location = this.state.value;
-    const search_url = `http://localhost:3001/api/users?q=${search_location}`
-    // http://survivor-connect.s3-website.us-east-2.amazonaws.comhttp://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/Users?q=${search_location}
+    const search_url = `http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/users?q=${search_location}`
+    // http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/Users?q=${search_location}
     fetch(search_url).then( response => {return response.json()}).then(json => this.storeInformation(json, false));
     this.setRedirect();
     event.preventDefault();

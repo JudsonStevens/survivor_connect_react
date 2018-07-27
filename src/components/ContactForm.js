@@ -43,7 +43,7 @@ class ContactForm extends Component {
 
   async handleSubmit(evt) {
     console.log(this.state.message)
-    const rawResponse = await fetch('http://localhost:3001/api/contact', {
+    const rawResponse = await fetch('http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/contact', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain,',

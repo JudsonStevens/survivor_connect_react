@@ -134,7 +134,7 @@ class RegistrationForm extends Component {
   }
 
   handleSubmit(evt) {
-    fetch('http://localhost:3001/users', {
+    fetch('http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain,',
