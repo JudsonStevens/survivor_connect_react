@@ -16,13 +16,13 @@ class SearchResults extends Component {
                 <Card.Group>
                   {
                     this.props.location.state.info.map((info) => 
-                    <Card>
+                    <Card href={"/profile/" + info.email.split('@')[0]}>
                       <Card.Content>
                         <Card.Header>
                           {info.name}
                         </Card.Header>
                         <Card.Meta>
-                          {info.street_address + ", " + info.city}
+                          {info.address}
                         </Card.Meta>
                         <Card.Description>
                           {info.bio_info}
@@ -30,7 +30,9 @@ class SearchResults extends Component {
                         <br>
                         </br>
                         <Card.Content extra>
-                          <p>Reach out to this lawyer here</p>
+                          {info.phone_number}
+                          <br />
+                          {info.email}
                         </Card.Content>
                       </Card.Content>    
                     </Card>)

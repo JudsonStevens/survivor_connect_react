@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import '../css/LawyerRegister.css';
+import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
-import RegistrationForm from '../components/RegistrationForm'
+import ProfileInformation from '../components/ProfileInformation'
 
-class LawyerRegister extends Component {
+class UserProfile extends Component {
   render() {
     return (
       <div className="register-body-div">
         <Grid centered container>
           <Grid.Row stretched centered>
             <Grid.Column id="inset-column">
-              <RegistrationForm />
+              <ProfileInformation name={this.props.match.params.name} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -19,4 +18,4 @@ class LawyerRegister extends Component {
   }
 }
 
-export default LawyerRegister
+export default UserProfile
