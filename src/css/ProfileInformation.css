@@ -1,0 +1,29 @@
+#profile-card {
+  width: 75%;
+}
+
+#profile-card-container {
+  display: flex;
+  justify-content: center;
+}
+
+#profile-header {
+  margin-top: 8% !important;
+  text-align: center;
+}
+
+#profile-content {
+  text-align: center;
+}
+
+.register-body-div {
+  background: linear-gradient(rgba(252, 250, 250, 0.2), rgba(235, 235, 235, 0.2)), url(../images/lawyer-profile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}

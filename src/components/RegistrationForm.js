@@ -223,6 +223,7 @@ class RegistrationForm extends Component {
           </Form.Group>
           <Form.Button disabled={isDisabled} content='Submit' />
         </Form>
+        {/* In order to redirect after the fetch call, added in a loading attribute and checked to see if it was false before redirecting. */}
         { 
           !this.state.loading && redirect && <Redirect push to={ {
             pathname: `/profile/${this.state.email.split('@')[0]}`,
