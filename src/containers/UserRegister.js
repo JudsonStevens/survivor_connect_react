@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../css/LawyerRegister.css';
+import '../css/UserRegister.css';
 import { Grid } from 'semantic-ui-react'
 import RegistrationForm from '../components/RegistrationForm'
 
-class LawyerRegister extends Component {
+class UserRegister extends Component {
   render() {
     return (
       <div className="register-body-div">
@@ -19,4 +19,4 @@ class LawyerRegister extends Component {
   }
 }
 
-export default LawyerRegister
+export default UserRegister

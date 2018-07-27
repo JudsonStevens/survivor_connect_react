@@ -30,7 +30,7 @@ class SearchResults extends Component {
                         <br>
                         </br>
                         <Card.Content extra>
-                          <p>Reach out to this lawyer here</p>
+                          <p>Reach out to this User here</p>
                         </Card.Content>
                       </Card.Content>    
                     </Card>)

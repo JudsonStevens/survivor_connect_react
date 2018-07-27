@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Header, Form, Dropdown } from 'semantic-ui-react'
 import '../css/RegistrationForm.css'
+import { Redirect } from 'react-router-dom'
+
 
 class RegistrationForm extends Component {
   constructor(props) {
@@ -27,63 +29,74 @@ class RegistrationForm extends Component {
       zipCode:              false,
       password:             false,
       passwordConfirmation: false
-    }
+    },
+    responseBody:           '',
+    redirect:               false,
+    loading:                true
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
-  this.stateOptions = [
-    { key: 'AL', value: 'AL', text: 'Alabama' },
-    { key: 'AK', value: 'AK', text: 'Alaska' },
-    { key: 'AZ', value: 'AZ', text: 'Arizona' },
-    { key: 'AR', value: 'AR', text: 'Arkansas'},
-    { key: 'CA', value: 'CA', text: 'Califorina' },
-    { key: 'CO', value: 'CO', text: 'Colorado' },
-    { key: 'CT', value: 'CT', text: 'Connecticut' },
-    { key: 'DE', value: 'DE', text: 'Delware' },
-    { key: 'FL', value: 'FL', text: 'Florida' },
-    { key: 'GA', value: 'GA', text: 'Georgia' },
-    { key: 'HI', value: 'HI', text: 'Hawaii' },
-    { key: 'ID', value: 'ID', text: 'Idaho' },
-    { key: 'IL', value: 'IL', text: 'Illinois' },
-    { key: 'IN', value: 'IN', text: 'Indiana' },
-    { key: 'IA', value: 'IA', text: 'Iowa' },
-    { key: 'KS', value: 'KS', text: 'Kansas' },
-    { key: 'KY', value: 'KY', text: 'Kentucky' },
-    { key: 'LA', value: 'LA', text: 'Louisiana' },
-    { key: 'ME', value: 'ME', text: 'Maine' },
-    { key: 'MD', value: 'MD', text: 'Maryland' },
-    { key: 'MA', value: 'MA', text: 'Massachusetts' },
-    { key: 'MI', value: 'MI', text: 'Michigan' },
-    { key: 'MN', value: 'MN', text: 'Minnesota' },
-    { key: 'MS', value: 'MS', text: 'Mississippi' },
-    { key: 'MO', value: 'MO', text: 'Missouri' },
-    { key: 'MT', value: 'MT', text: 'Montana' },
-    { key: 'NE', value: 'NE', text: 'Nebraska' },
-    { key: 'NV', value: 'NV', text: 'Nevada' },
-    { key: 'NH', value: 'NH', text: 'New Hampshire' },
-    { key: 'NJ', value: 'NJ', text: 'New Jersey' },
-    { key: 'NM', value: 'NM', text: 'New Mexico' },
-    { key: 'NY', value: 'NY', text: 'New York' },
-    { key: 'NC', value: 'NC', text: 'North Carolina' },
-    { key: 'ND', value: 'ND', text: 'North Dakota' },
-    { key: 'OH', value: 'OH', text: 'Ohio' },
-    { key: 'OK', value: 'OK', text: 'Oklahoma' },
-    { key: 'OR', value: 'OR', text: 'Oregon' },
-    { key: 'PA', value: 'PA', text: 'Pennsylvania' },
-    { key: 'RI', value: 'RI', text: 'Rhode Island' },
-    { key: 'SC', value: 'SC', text: 'South Carolina' },
-    { key: 'SD', value: 'SD', text: 'South Dakota' },
-    { key: 'TN', value: 'TN', text: 'Tennessee' },
-    { key: 'TX', value: 'TX', text: 'Texas' },
-    { key: 'UT', value: 'UT', text: 'Utah' },
-    { key: 'VT', value: 'VT', text: 'Vermont' },
-    { key: 'VA', value: 'VA', text: 'Virginia' },
-    { key: 'WA', value: 'WA', text: 'Washington' },
-    { key: 'WV', value: 'WV', text: 'West Virginia' },
-    { key: 'WI', value: 'WI', text: 'Wisconsin' },
-    { key: 'WY', value: 'WY', text: 'Wyoming' }
-    ];
+    this.stateOptions = [
+      { key: 'AL', value: 'AL', text: 'Alabama' },
+      { key: 'AK', value: 'AK', text: 'Alaska' },
+      { key: 'AZ', value: 'AZ', text: 'Arizona' },
+      { key: 'AR', value: 'AR', text: 'Arkansas'},
+      { key: 'CA', value: 'CA', text: 'Califorina' },
+      { key: 'CO', value: 'CO', text: 'Colorado' },
+      { key: 'CT', value: 'CT', text: 'Connecticut' },
+      { key: 'DE', value: 'DE', text: 'Delware' },
+      { key: 'FL', value: 'FL', text: 'Florida' },
+      { key: 'GA', value: 'GA', text: 'Georgia' },
+      { key: 'HI', value: 'HI', text: 'Hawaii' },
+      { key: 'ID', value: 'ID', text: 'Idaho' },
+      { key: 'IL', value: 'IL', text: 'Illinois' },
+      { key: 'IN', value: 'IN', text: 'Indiana' },
+      { key: 'IA', value: 'IA', text: 'Iowa' },
+      { key: 'KS', value: 'KS', text: 'Kansas' },
+      { key: 'KY', value: 'KY', text: 'Kentucky' },
+      { key: 'LA', value: 'LA', text: 'Louisiana' },
+      { key: 'ME', value: 'ME', text: 'Maine' },
+      { key: 'MD', value: 'MD', text: 'Maryland' },
+      { key: 'MA', value: 'MA', text: 'Massachusetts' },
+      { key: 'MI', value: 'MI', text: 'Michigan' },
+      { key: 'MN', value: 'MN', text: 'Minnesota' },
+      { key: 'MS', value: 'MS', text: 'Mississippi' },
+      { key: 'MO', value: 'MO', text: 'Missouri' },
+      { key: 'MT', value: 'MT', text: 'Montana' },
+      { key: 'NE', value: 'NE', text: 'Nebraska' },
+      { key: 'NV', value: 'NV', text: 'Nevada' },
+      { key: 'NH', value: 'NH', text: 'New Hampshire' },
+      { key: 'NJ', value: 'NJ', text: 'New Jersey' },
+      { key: 'NM', value: 'NM', text: 'New Mexico' },
+      { key: 'NY', value: 'NY', text: 'New York' },
+      { key: 'NC', value: 'NC', text: 'North Carolina' },
+      { key: 'ND', value: 'ND', text: 'North Dakota' },
+      { key: 'OH', value: 'OH', text: 'Ohio' },
+      { key: 'OK', value: 'OK', text: 'Oklahoma' },
+      { key: 'OR', value: 'OR', text: 'Oregon' },
+      { key: 'PA', value: 'PA', text: 'Pennsylvania' },
+      { key: 'RI', value: 'RI', text: 'Rhode Island' },
+      { key: 'SC', value: 'SC', text: 'South Carolina' },
+      { key: 'SD', value: 'SD', text: 'South Dakota' },
+      { key: 'TN', value: 'TN', text: 'Tennessee' },
+      { key: 'TX', value: 'TX', text: 'Texas' },
+      { key: 'UT', value: 'UT', text: 'Utah' },
+      { key: 'VT', value: 'VT', text: 'Vermont' },
+      { key: 'VA', value: 'VA', text: 'Virginia' },
+      { key: 'WA', value: 'WA', text: 'Washington' },
+      { key: 'WV', value: 'WV', text: 'West Virginia' },
+      { key: 'WI', value: 'WI', text: 'Wisconsin' },
+      { key: 'WY', value: 'WY', text: 'Wyoming' }
+      ];
+  }
+
+  componentDidMount() {
+    this.setState({
+      redirect: false,
+      responseBody: '',
+      loading: true
+    })
   }
 
   validate = (info) => {
@@ -113,8 +126,15 @@ class RegistrationForm extends Component {
     this.setState({ state: data.value });
   }
 
-  async handleSubmit(evt) {
-    const rawResponse = await fetch('http://localhost:3001/api/lawyers', {
+  storeInformation = (info) => {
+    this.setState({
+      responseBody: info,
+      loading: false
+    })
+  }
+
+  handleSubmit(evt) {
+    fetch('http://localhost:3001/users', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain,',
@@ -128,17 +148,19 @@ class RegistrationForm extends Component {
         password: this.state.password,
         password_confirmation: this.state.passwordConfirmation
       })
-    });
-    const response = await rawResponse.json();
-    console.log(response);
+    }).then(response => {
+      sessionStorage.setItem('jwt', response.headers.get('Authorization').split('Bearer ')[1]);
+      return response.json();
+    }).then(parsedResponse => this.storeInformation(parsedResponse) );
+    evt.preventDefault();
   }
-
+  
   canBeSubmitted() {
     const errors = this.validate(this.state);
     const isDisabled = Object.keys(errors).some(x => errors[x]);
     return !isDisabled;
   }
-
+  
   render() {
     const { 
       firstName,
@@ -150,7 +172,8 @@ class RegistrationForm extends Component {
       zipCode,
       phoneNumber,
       password,
-      passwordConfirmation
+      passwordConfirmation,
+      redirect
     } = this.state
 
     const shouldMarkError = (field) => {
@@ -200,6 +223,12 @@ class RegistrationForm extends Component {
           </Form.Group>
           <Form.Button disabled={isDisabled} content='Submit' />
         </Form>
+        { 
+          !this.state.loading && redirect && <Redirect push to={ {
+            pathname: `/profile/${this.state.email.split('@')[0]}`,
+            state: { name: this.state.responseBody["name"] }
+          } } />
+        }
       </Container>
     )
   }
