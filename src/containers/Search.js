@@ -22,7 +22,9 @@ class Search extends Component {
           </Grid>
         </div>
         <div className="about-text">
-          <h1> Hello </h1>
+          <h1> Survivor Connect </h1>
+          <p>Survivor Connect is designed to help survivors of domestic violence and sexual assault find attorneys in their area who offer pro bono legal services.</p>
+          <p><a href='/support' >click here to learn more</a></p>
         </div>
         <div className="second-parallax">
         </div>
