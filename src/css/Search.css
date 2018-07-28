@@ -66,6 +66,21 @@
   background-size: cover;
 }
 
+.second-parallax p {
+  color: #86649D;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.second-parallax a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+
 div.ui.container.grid {
   height: 100%;
   width: 100%

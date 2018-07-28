@@ -27,6 +27,14 @@ class Search extends Component {
           <p><a href='/support' >click here to learn more</a></p>
         </div>
         <div className="second-parallax">
+          <p>Image credits:</p>
+          <p><a href="https://unsplash.com/@saffu">Saffu</a></p>
+          <p><a href="https://unsplash.com/@firmbee">William Iven</a></p>
+          <p><a href="hhttps://unsplash.com/@kalljet">Katarzyna Grabowska</a></p>
+          <p><a href="https://unsplash.com/@acharki95">Aziz Acharki</a></p>
+          <p><a href="https://unsplash.com/@sharonmccutcheon">Sharon McCutcheon</a></p>
+          <p><a href="https://unsplash.com/@adrianpelletier">Adrian Pelletier</a></p>
+          <p><a href="https://unsplash.com/@pichler_sebastian">Sebastian Pichler</a></p>
         </div>
       </div>
     );
