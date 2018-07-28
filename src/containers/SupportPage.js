@@ -44,13 +44,13 @@ class SupportPage extends Component {
                         Your generosity helps us maintain this site and help survivors.
                       </Card.Description>
                     </Card.Content>
-                      <Card.Content extra>
-                    <div className='ui buttons'>
-                      <Button basic color='black'>
-                        Donate with PayPal
-                      </Button>
-                    </div>
-                  </Card.Content>
+                    <Card.Content extra>
+                      <div className='ui two buttons'>
+                        <Button basic color='black' href='/donate'>
+                          Donate with PayPal
+                        </Button>
+                      </div>
+                    </Card.Content>
                   </Card>
                   <Card id='advocate_card'>
                     <Card.Content>
@@ -62,9 +62,9 @@ class SupportPage extends Component {
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                      <div className='ui buttons'>
-                        <Button basic color='black'>
-                          Request a law practice profile
+                      <div className='ui two buttons'>
+                        <Button basic color='black' href='/contact'>
+                          Get in touch
                         </Button>
                       </div>
                     </Card.Content>
@@ -80,7 +80,7 @@ class SupportPage extends Component {
                     </Card.Content>
                     <Card.Content extra>
                       <div className='ui two buttons'>
-                        <Button basic color='black'>
+                        <Button basic color='black' href='/contact'>
                           Get in touch
                         </Button>
                       </div>
@@ -95,7 +95,7 @@ class SupportPage extends Component {
                     </Card.Content>
                     <Card.Content extra>
                       <div className='ui two buttons'>
-                        <Button basic color='black'>
+                        <Button basic color='black' href='/share'>
                           Share
                         </Button>
                       </div>
@@ -105,8 +105,6 @@ class SupportPage extends Component {
               </Container>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-          </Grid.Row>
         </Grid>
       </div>
         );
@@ -115,4 +113,4 @@ class SupportPage extends Component {
 
 
 
-export default SupportPage
+export default SupportPage;
