@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Button, Container, Input } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom'
 import '../css/Contact.css'
+import { API_Url } from '../api/APIUrls'
 
 class ContactForm extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class ContactForm extends Component {
 
   async handleSubmit(evt) {
     console.log(this.state.message)
-    const rawResponse = await fetch('http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/contact', {
+    const rawResponse = await fetch(`${API_Url}/api/contact`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain,',

@@ -9,6 +9,7 @@ import UserProfile from './UserProfile'
 import Contact from './Contact'
 import Share from './Share'
 import Donate from './Donate'
+import NavBar from './NavBar'
 
 class App extends Component {
   render() {

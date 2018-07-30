@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Card, Button } from 'semantic-ui-react';
 import '../css/ProfileInformation.css'
+import { API_Url } from '../api/APIUrls'
 
 class ProfileInformation extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class ProfileInformation extends Component {
 
   componentWillMount() {
     let jwt = sessionStorage.getItem('jwt')
-    fetch(`http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com/api/user/${this.props.name}`, {
+    fetch(`${API_Url}/api/user/${this.props.name}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -46,19 +47,6 @@ class ProfileInformation extends Component {
     ) ) );
   }
   
-  // getUserInformation = () => {
-  //   let jwt = sessionStorage.getItem('jwt')
-  //   fetch('http://localhost:3001/api/user', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json',
-  //       'Authorization': `Bearer ${jwt}`
-  //     }
-  //   }).then(response => response.json())
-  //   .then(parsedResponse => this.setState( () => ( { name: parsedResponse["name"] } ) ) );
-  // }
-
   render () {
     return(
       <div id="profile-container">  
@@ -108,8 +96,8 @@ class ProfileInformation extends Component {
             }
             {
               !this.state.loading && this.state.displayButtons &&
-              <Button>
-                Click Here
+              <Button id="user-edit-button">
+                Edit My Account
               </Button>
             }
           </Card>

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Header, Grid, Card } from 'semantic-ui-react';
 import '../css/SearchResults.css'
+import ResultsMapContainer from './ResultsMapContainer'
 
 class SearchResults extends Component {
   render() {
+    let   returnedResults = this.props.location.state.info
+    const defaultLocationElements = this.props.location.state.info.pop();
+    const defaultLocation = { lat: defaultLocationElements[0], lng: defaultLocationElements[1] }
+
     return (
       <div className="results-body-div">
         <Grid centered container>
@@ -15,8 +20,8 @@ class SearchResults extends Component {
                 </Header>
                 <Card.Group>
                   {
-                    this.props.location.state.info.map((info) => 
-                    <Card href={"/profile/" + info.email.split('@')[0]}>
+                    this.props.location.state.info.map((info, index) => 
+                    <Card key={index} href={"/profile/" + info.email.split('@')[0]}>
                       <Card.Content>
                         <Card.Header>
                           {info.name}
@@ -38,6 +43,12 @@ class SearchResults extends Component {
                     </Card>)
                   }
                 </Card.Group>
+              </Container>
+              <Container id="results-map-container">
+                <ResultsMapContainer
+                  results={returnedResults}
+                  location={defaultLocation}
+                />
               </Container>
             </Grid.Column>
           </Grid.Row>
