@@ -33,7 +33,7 @@ div.ui.stackable.menu {
   display: flex;
   justify-content: center;
   font-size: 1.5em;
-  padding: 0% 2% 2% 2%;
+  /* padding: 0% 2% 2% 2%; */
   font-family: 'Forum';
 }
 
@@ -73,9 +73,9 @@ div.ui.stackable.menu {
 }
 
 .second-parallax p {
-  color: #86649D;
-  display: flex;
-  justify-content: center;
+  /* color: #86649D; */
+  /* display: flex; */
+  /* justify-content: center; */
   align-self: flex-end;
 }
 
@@ -102,4 +102,44 @@ div.ui.container.grid {
 #inset-column {
   width: 80%;
 }
+div.ui.message.compact {
+  justify-content: center;
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 30%
+}
+div.ui.message.compact a{
+  color: black;
+}
+div.ui.message.compact a:link {
+  color: #A38FA4;
+}
+div.ui.message.compact a:visited {
+  color: #86649D;
+}
+div.ui.message.compact a:hover {
+  color: #A38FA4;
+}
 
+.credits {
+  background-color: #A38FA4;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25%;
+  height: 20%;
+}
+
+.credits p {
+  color: black;
+  padding: 4%;
+  font-size: 1.5em;
+  white-space: pre;
+}
+
+.credits a {
+  color: #E9D7D8;
+}
+
+.credits a:hover {
+  color:white;
+}

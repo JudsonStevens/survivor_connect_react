@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Search.css';
 import '../css/SearchField.css';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Message } from 'semantic-ui-react'
 import SearchField from '../components/SearchField'
 
 class Search extends Component {
@@ -27,18 +27,23 @@ class Search extends Component {
           <p><a href='/support' >click here to learn more</a></p>
         </div>
         <div className="second-parallax">
-          <span className='about-signal'>
-            <p>We recommend that all users of our site communicate with attorneys via Signal, a free and secure app which encrypts all messages and calls when both parties use it. Read more here: </p>
-            <p><a href="https://signal.org/">Signal.org</a></p>
-          </span>
-          <p>Image credits:</p>
-          <p><a href="https://unsplash.com/@saffu">Saffu</a></p>
-          <p><a href="https://unsplash.com/@firmbee">William Iven</a></p>
-          <p><a href="hhttps://unsplash.com/@kalljet">Katarzyna Grabowska</a></p>
-          <p><a href="https://unsplash.com/@acharki95">Aziz Acharki</a></p>
-          <p><a href="https://unsplash.com/@sharonmccutcheon">Sharon McCutcheon</a></p>
-          <p><a href="https://unsplash.com/@adrianpelletier">Adrian Pelletier</a></p>
-          <p><a href="https://unsplash.com/@pichler_sebastian">Sebastian Pichler</a></p>
+          <Message className='ui compact message'>
+            <Message.Header>
+              <a href="https://signal.org/">Signal.org</a>
+            </Message.Header>
+            We recommend that all users of our site communicate with attorneys 
+            via Signal, a free and secure app which encrypts all messages and calls when both parties use it.
+          </Message>
+          <div className='credits'>
+            <p>Image credits:{' '}
+            <a href="https://unsplash.com/@saffu">Saffu</a>,{' '}
+            <a href="https://unsplash.com/@firmbee">William Iven</a>,{' '} 
+            <a href="hhttps://unsplash.com/@kalljet">Katarzyna Grabowska</a>,{' '} 
+            <a href="https://unsplash.com/@acharki95">Aziz Acharki</a>,{' '}
+            <a href="https://unsplash.com/@sharonmccutcheon">Sharon McCutcheon</a>,{' '} 
+            <a href="https://unsplash.com/@adrianpelletier">Adrian Pelletier</a>,{' '} 
+            <a href="https://unsplash.com/@pichler_sebastian">Sebastian Pichler</a></p>{' '}
+         </div>
         </div>
       </div>
     );
