@@ -63,8 +63,8 @@ class SupportPage extends Component {
                     </Card.Content>
                     <Card.Content extra>
                       <div className='ui two buttons'>
-                        <Button basic color='black' href='/contact'>
-                          Get in touch
+                        <Button basic color='black' href='/user_register'>
+                          Request a Profile
                         </Button>
                       </div>
                     </Card.Content>
