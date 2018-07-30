@@ -37,3 +37,15 @@ h2 {
   justify-content: flex-start;
   text-shadow: 2px 2px 2px rgb(3, 3, 3);
 }
+
+.share-blurb {
+  margin: 50px 5px 5px 5px;
+}
+
+p {
+  font-size: 1em;
+  display: flex;
+  justify-content: flex-start;
+  text-anchor: start;
+  text-shadow: 2px 2px 2px rgb(135,144,107,0.2);
+}

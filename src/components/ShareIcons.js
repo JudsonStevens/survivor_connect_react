@@ -12,15 +12,22 @@ class ShareIcons extends Component {
     const via = 'Survivor Connect exists to serve people affected by domestic violence and sexual assault.';
 
     return (
-      <div className='share-icons-div'>
-        <h2>Share Survivor Connect</h2>
-        <TwitterShareButton url={shareUrl} title={twitterTitle} hashtag={via}>
-          <TwitterIcon className='twitter' size={92} round={false} />
-        </TwitterShareButton>
-        <FacebookShareButton url={shareUrl} title={title} quote={quote}>
-          <FacebookIcon className='facebook' size={92} round={false} />
-        </FacebookShareButton>
-      </div>
+      <Container>
+        <div className='share-icons-div'>
+          <h2>Share Survivor Connect</h2>
+          <TwitterShareButton url={shareUrl} title={twitterTitle} hashtag={via}>
+            <TwitterIcon className='twitter' size={92} round={false} />
+          </TwitterShareButton>
+          <FacebookShareButton url={shareUrl} title={title} quote={quote}>
+            <FacebookIcon className='facebook' size={92} round={false} />
+          </FacebookShareButton>
+        </div>
+        <div className="share-blurb">
+          <p>Use the icons above to tell your friends about Survivor Connect.</p> 
+          <p>By sharing our app, you're helping us reach more survivors and more service providers.</p>
+          <p>Thank you!</p>
+        </div>
+      </Container>
     )
   }
 }
