@@ -15,11 +15,41 @@ div.ui.stackable.menu {
 }
 
 .about-text {
-  height: 300px;
-  background: linear-gradient(rgba(80, 49, 119, 0.774), rgba(182, 147, 228, 0.774));
+  height: 400px;
+  /* background: linear-gradient(rgba(80, 49, 119, 0.774), rgba(182, 147, 228, 0.774)); */
+  background-repeat: no-repeat;
+  background-size: auto;
+  background: url(../images/bokeh.jpg);
+  background-blend-mode: lighten;
   box-shadow: 0 0 20px rgb(69, 48, 119);
 }
 
+.about-text h1 {
+  font-size: 3em;
+  padding: -2em;
+}
+
+.about-text p {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  padding: 0% 2% 2% 2%;
+  font-family: 'Forum';
+}
+
+.about-text a {
+  justify-content: space-between;
+}
+
+.about-text a:link {
+  color: #A38FA4;
+}
+.about-text a:visited {
+  color: #86649D;
+}
+.about-text a:hover {
+  color: white;
+}
 .parallax {
   background: linear-gradient(rgba(252, 250, 250, 0.3), rgba(235, 235, 235, 0.3)), url(../images/magnifying-glass-modified.jpg);
   height: 110%;
@@ -41,6 +71,21 @@ div.ui.stackable.menu {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.second-parallax p {
+  color: #86649D;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.second-parallax a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+
 
 div.ui.container.grid {
   height: 100%;
