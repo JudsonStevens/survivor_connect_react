@@ -122,11 +122,12 @@ div.ui.message.compact a:hover {
 }
 
 .credits {
-  background-color: #A38FA4;
+  background-color: white;
   display: flex;
   justify-content: space-around;
-  margin-top: 25%;
-  height: 20%;
+  margin-top: 35%;
+  height: 15%;
+  border: 1px solid black;
 }
 
 .credits p {
@@ -137,9 +138,9 @@ div.ui.message.compact a:hover {
 }
 
 .credits a {
-  color: #E9D7D8;
+  color: #A38FA4;
 }
 
 .credits a:hover {
-  color:white;
+  color:black;
 }
