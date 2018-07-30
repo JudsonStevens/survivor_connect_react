@@ -22,17 +22,13 @@ class Search extends Component {
         <div className="about-text">
           <h1> Survivor Connect </h1>
           <p>Survivor Connect is designed to help survivors of domestic violence and sexual assault find attorneys in their area who offer pro bono legal services.</p>
-          <p><a href='/support' >click here to learn more</a></p>
+          <p><a href='/support' >Click here to learn more about Survivor Connect.</a></p>
         </div>
         <div className="second-parallax">
-          <Message className='ui compact message'>
-            <Message.Header>
-              <a href="https://signal.org/">Signal.org</a>
-            </Message.Header>
-            We recommend that all users of our site communicate with attorneys 
-            via Signal, a free and secure app which encrypts all messages and calls when both parties use it.
-          </Message>
           <div className='credits'>
+            <p>We recommend that all users of our site communicate with attorneys 
+            via Signal, a free and secure app which encrypts all messages and calls when both parties use it.</p>
+            <p>Find a link <a href="https://signal.org/">here for Signal.</a></p>
             <p>Image credits:{' '}
             <a href="https://unsplash.com/@saffu">Saffu</a>,{' '}
             <a href="https://unsplash.com/@firmbee">William Iven</a>,{' '} 

@@ -10,9 +10,14 @@ import Contact from './Contact'
 import Share from './Share'
 import Donate from './Donate'
 import NavBar from './NavBar'
+import { API_Url } from '../api/APIUrls'
+
 
 class App extends Component {
   render() {
+    const currentUser = React.createContext(
+      fetch(`${API_Url}/api/current_user`).then(response => JSON.parse(response)).then(json => console.log(json))
+    )
     return (
       <Router>
         <Switch>

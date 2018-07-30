@@ -16,7 +16,7 @@ const ResultsMap = withScriptjs(withGoogleMap((props) => {
     })
     return (
       <GoogleMap
-        defaultZoom={ 10 }
+        defaultZoom={ 9 }
         center={ props.location }
       >
         {markers}

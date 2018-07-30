@@ -37,6 +37,22 @@ export default class NavBar extends Component {
         >
           Support Survivor Connect
         </Menu.Item>
+        <Menu.Item
+          name='Contact'
+          active={activeItem === 'Contact'}
+          onClick={this.handleItemClick}
+          href='/contact'
+        >
+          Contact Survivor Connect
+        </Menu.Item>
+        <Menu.Item
+          name='Donate'
+          active={activeItem === 'Donate'}
+          onClick={this.handleItemClick}
+          href='/donate'
+        >
+          Donate
+        </Menu.Item>
       </Menu>
     )
   }
