@@ -27,6 +27,10 @@ class Search extends Component {
           <p><a href='/support' >click here to learn more</a></p>
         </div>
         <div className="second-parallax">
+          <span className='about-signal'>
+            <p>We recommend that all users of our site communicate with attorneys via Signal, a free and secure app which encrypts all messages and calls when both parties use it. Read more here: </p>
+            <p><a href="https://signal.org/">Signal.org</a></p>
+          </span>
           <p>Image credits:</p>
           <p><a href="https://unsplash.com/@saffu">Saffu</a></p>
           <p><a href="https://unsplash.com/@firmbee">William Iven</a></p>
