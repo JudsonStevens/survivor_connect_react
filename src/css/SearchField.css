@@ -3,7 +3,7 @@ div#form-container {
 }
 
 div.ui.header {
-  margin-top: 28% !important;
+  margin-top: 15% !important;
   font-size: 3.8em !important;
   color: white;
   text-shadow: 2px 2px 2px rgb(3, 3, 3);
@@ -15,6 +15,7 @@ form {
   top: 2%;
   position: relative;
   width: 85%;
+  margin-bottom: 50%;
 }
 
 div.ui.icon.input {

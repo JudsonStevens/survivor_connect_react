@@ -10,8 +10,6 @@ class Search extends Component {
       <div className="home-page">
         <div className="parallax">
           <Grid centered container>
-            <Grid.Row>
-            </Grid.Row>
             <Grid.Row stretched centered>
               <Grid.Column id="inset-column">
                 <SearchField />
