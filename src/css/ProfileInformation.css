@@ -25,7 +25,22 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
+  top: 6.4%;
   left: 0;
   overflow: auto;
+}
+
+#user-edit-button {
+  width: 50%;
+  margin: auto auto 10px auto;
+  background: grey;
+}
+
+#results-map-container {
+  margin-top: 4%;
+  margin-bottom: 8%;
+}
+
+#map-element {
+  border-radius: 5px;
 }

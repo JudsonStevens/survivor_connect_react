@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Header, Form, Dropdown } from 'semantic-ui-react'
 import '../css/RegistrationForm.css'
 import { Redirect } from 'react-router-dom'
+import { API_Url } from '../api/APIUrls'
 
 
 class RegistrationForm extends Component {
@@ -129,12 +130,13 @@ class RegistrationForm extends Component {
   storeInformation = (info) => {
     this.setState({
       responseBody: info,
-      loading: false
+      loading: false,
+      redirect: true
     })
   }
 
   handleSubmit(evt) {
-    fetch('http://www.survivor-connect-2.us-west-2.elasticbeanstalk.com', {
+    fetch(`${API_Url}/users`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain,',

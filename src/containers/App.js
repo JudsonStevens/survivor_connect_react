@@ -6,6 +6,7 @@ import SupportPage from './SupportPage'
 import SearchResults from './SearchResults'
 import UserRegister from './UserRegister'
 import UserProfile from './UserProfile'
+import NavBar from './NavBar'
 
 class App extends Component {
   render() {
