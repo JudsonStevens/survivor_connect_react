@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Grid, Card } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import ContactForm from '../components/ContactForm'
 import '../css/Contact.css'
 

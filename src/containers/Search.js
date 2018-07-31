@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Search.css';
 import '../css/SearchField.css';
-import { Grid, Message } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import SearchField from '../components/SearchField'
 
 class Search extends Component {

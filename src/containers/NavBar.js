@@ -1,13 +1,41 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 import '../css/NavBar.css'
+import { API_Url } from '../api/APIUrls'
 
 export default class NavBar extends Component {
-  state = {}
+  constructor(props) { 
+    super(props);
+    this.state = {
+      name: null,
+      jwt:  sessionStorage.getItem('jwt'),
+      currentUser: sessionStorage.getItem('currentUser')
+    }
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  componentWillMount() {
+    // if(this.state.currentUser) {
+    // fetch(`${API_Url}/api/users/${this.state.currentUser.split('@')[0]}`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json',
+    //     'Authorization': `Bearer ${this.state.jwt}`
+    //   }
+    // })
+    // .then( response => response.json() )
+    // .then( parsedResponse => 
+    //   this.setState( () => ( 
+    //       {  
+    //         name: parsedResponse      
+    //       }
+    //     ) 
+    //   ) 
+    // )};
+  }
+  
   render() {
     const { activeItem } = this.state
 
@@ -53,6 +81,39 @@ export default class NavBar extends Component {
         >
           Donate
         </Menu.Item>
+        {
+          this.state.jwt && this.state.currentUser &&
+          <Menu.Item
+            name='Profile'
+            active={activeItem === 'Profile'}
+            onClick={this.handleItemClick}
+            href={"/profile/" + this.state.currentUser.split('@')[0]}
+          >
+          Profile
+          </Menu.Item>
+        }
+        {
+          this.state.jwt && this.state.currentUser &&
+          <Menu.Item
+            name='Logout'
+            active={activeItem === 'Logout'}
+            onClick={this.handleItemClick}
+            href='/logout'
+          >
+          Logout
+          </Menu.Item>
+        }
+        {
+          !this.state.jwt && !this.state.name &&
+          <Menu.Item
+            name='Login'
+            active={activeItem === 'Login'}
+            onClick={this.handleItemClick}
+            href='/login'
+          >
+          Login
+          </Menu.Item>
+        }
       </Menu>
     )
   }

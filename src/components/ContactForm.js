@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Container, Input } from 'semantic-ui-react';
+import { Form, Container } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom'
 import '../css/Contact.css'
 import { API_Url } from '../api/APIUrls'
@@ -103,7 +103,6 @@ class ContactForm extends Component {
                     </Form.Button>
               </Form>
           </Container>
-        // </div>
         )
       }
     }

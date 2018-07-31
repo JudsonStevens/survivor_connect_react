@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Grid } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import ShareIcons from '../components/ShareIcons'
 import '../css/Share.css'
 
