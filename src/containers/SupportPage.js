@@ -22,7 +22,7 @@ class SupportPage extends Component {
 
   render() {
     return (
-      <div class="support-body-div">
+      <div className="support-body-div">
         <Grid centered container>
           <Grid.Row centered>
             <Grid.Column id="inset-column">

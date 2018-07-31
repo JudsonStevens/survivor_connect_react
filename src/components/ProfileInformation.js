@@ -23,7 +23,7 @@ class ProfileInformation extends Component {
 
   componentWillMount() {
     let jwt = sessionStorage.getItem('jwt')
-    fetch(`${API_Url}/api/user/${this.props.name}`, {
+    fetch(`${API_Url}/api/user/${this.props.email}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',

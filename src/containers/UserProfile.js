@@ -9,7 +9,7 @@ class UserProfile extends Component {
         <Grid centered container>
           <Grid.Row stretched centered>
             <Grid.Column id="inset-column">
-              <ProfileInformation name={this.props.match.params.name} />
+              <ProfileInformation email={this.props.match.params.name} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

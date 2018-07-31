@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Grid } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import { FacebookIcon, TwitterIcon, TwitterShareButton, FacebookShareButton } from 'react-share';
 import '../css/Share.css'
 

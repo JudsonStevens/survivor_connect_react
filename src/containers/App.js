@@ -9,15 +9,11 @@ import UserProfile from './UserProfile'
 import Contact from './Contact'
 import Share from './Share'
 import Donate from './Donate'
-import NavBar from './NavBar'
-import { API_Url } from '../api/APIUrls'
+import Login from './Login'
 
 
 class App extends Component {
   render() {
-    // const currentUser = React.createContext(
-    //   fetch(`${API_Url}/api/current_user`).then(response => JSON.parse(response)).then(json => console.log(json))
-    // )
     return (
       <Router>
         <Switch>
@@ -30,6 +26,7 @@ class App extends Component {
           <Route path='/profile/:name' component={UserProfile} />
           <Route path='/donate' exact component={Donate} />
           <Route path='/share' exact component={Share} />
+          <Route path='/login' exact component={Login} />
           <Route component={NotFound} />
         </Switch>
       </Router>
