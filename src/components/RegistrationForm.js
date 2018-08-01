@@ -191,10 +191,11 @@ class RegistrationForm extends Component {
 
     return (
       <Container id="registration-container">
-        <Header id='registration-header'>
+        {/* <Header id='registration-header'> */}
+        <h2 className='register-form-header'>
           Fill in your information in order to create an account.
-          All fields are required to create your account
-        </Header>
+          All fields are required to create your account</h2>
+        {/* </Header> */}
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths={2}>
             <Form.Input className={shouldMarkError('firstName') ? "error" : ""} onBlur={this.handleBlur('firstName')} label="First Name" placeholder='First Name' name='firstName' value={firstName} onChange={this.handleChange} width={8} />
