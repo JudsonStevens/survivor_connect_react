@@ -3,11 +3,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: absolute;
   top: 6.4%;
   left: 0;
   overflow: auto;
+}
+
+#registration-header {
+  margin-top: 0;
+}
+
+.register-form-header {
+  color: white;
 }
 
 .footer {
