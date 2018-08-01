@@ -15,6 +15,9 @@ div.ui.container.grid {
     height: 100%;
 }
 
+div.ui.centered.container.grid {
+    margin: 2%;
+}
 
 .row {
     height: 15%;
@@ -22,7 +25,7 @@ div.ui.container.grid {
 }
 
 #message-header {
-    padding: 3em;
+    font-size: 0em;
     color: white;
     text-shadow: 2px 2px 2px rgb(3, 3, 3);
 }
@@ -35,7 +38,8 @@ div.ui.container.grid {
 }
 
 #contact-header {
-    padding: 3em;
+    padding: 1em;
+    font-size: 3em;
     color: white;
     text-shadow: 2px 2px 2px rgb(3, 3, 3);
 }
