@@ -9,8 +9,7 @@ export default class NavBar extends Component {
     this.state = {
       name: null,
       jwt:  sessionStorage.getItem('jwt'),
-      currentUser: sessionStorage.getItem('currentUser'),
-      loggedIn: false
+      currentUser: sessionStorage.getItem('currentUser')
     }
   }
 
@@ -36,18 +35,9 @@ export default class NavBar extends Component {
     //   ) 
     // )};
   }
-
-  isLoggedIn = () => {
-    if(this.state.currentUser !== "null") {
-        this.setState({
-          loggedIn: true
-      })
-    }
-  }
   
   render() {
     const { activeItem } = this.state
-    const userLoggedIn = this.isLoggedIn()
 
     return(
       <Menu stackable>
@@ -92,7 +82,7 @@ export default class NavBar extends Component {
           Donate
         </Menu.Item>
         {
-          this.state.jwt && userLoggedIn &&
+          this.state.jwt && this.state.currentUser !== "null" &&
           <Menu.Item
             name='Profile'
             active={activeItem === 'Profile'}
@@ -103,7 +93,7 @@ export default class NavBar extends Component {
           </Menu.Item>
         }
         {
-          this.state.jwt && userLoggedIn &&
+          this.state.jwt && this.state.currentUser !== "null" &&
           <Menu.Item
             name='Logout'
             active={activeItem === 'Logout'}
