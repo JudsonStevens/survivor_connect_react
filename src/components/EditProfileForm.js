@@ -8,15 +8,13 @@ class EditProfileForm extends Component {
     super(props);
     this.state = {
       firstName:              this.props.name.split(' ')[0],
-      lastName:               this.props.nam
+      lastName:               this.props.name.split(' ')[1],
       email:                  this.props.email,
-      streetAddress:          this.props.streetAddress,
-      city:                   this.props.city,
-      state:                  this.props.state,
-      zipCode:                '',
-      phoneNumber:            '',
-      password:               '',
-      passwordConfirmation:   '',
+      streetAddress:          this.props.address.split(', ')[0],
+      city:                   this.props.address.split(' ')[1],
+      state:                  this.props.address.split(' ')[2]
+      zipCode:                this.props.address.split(' ')[3],
+      phoneNumber:            this.props.phone_number,
       touched: {
         firstName:            false,
         lastName:             false,
@@ -25,9 +23,7 @@ class EditProfileForm extends Component {
         city:                 false,
         state:                false,
         phoneNumber:          false,
-        zipCode:              false,
-        password:             false,
-        passwordConfirmation: false
+        zipCode:              false
       },
       responseBody : '',
       redirect: false,
@@ -64,9 +60,9 @@ class EditProfileForm extends Component {
       city:                 info.city.length === 0,
       state:                info.state.length === 0,
       zipCode:              info.zipCode.length === 0,
-      phoneNumber:          info.phoneNumber.length === 0,
-      password:             info.password.length < 6,
-      passwordConfirmation: info.passwordConfirmation !== info.password
+      phoneNumber:          info.phoneNumber.length === 0
+      // password:             info.password.length < 6,
+      // passwordConfirmation: info.passwordConfirmation !== info.password
     }
   }
 
@@ -89,12 +85,15 @@ class EditProfileForm extends Component {
       redirect: true
     })
   }
+
   handleSubmit(evt) {
+    let jwt = sessionStorage.getItem('jwt')
     fetch(`${API_Url}/users`, {
-      method: 'PUT',
+      method: 'PATCH',
       headers: {
         'Accept': 'application/json, text/plain,',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${jwt}`
       },
       body: JSON.stringify({
         name: (this.state.firstName + " " + this.state.lastName),
@@ -127,8 +126,6 @@ class EditProfileForm extends Component {
       state, 
       zipCode,
       phoneNumber,
-      password,
-      passwordConfirmation,
       redirect
     } = this.state
 
