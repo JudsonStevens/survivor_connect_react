@@ -152,6 +152,7 @@ class RegistrationForm extends Component {
       })
     }).then(response => {
       sessionStorage.setItem('jwt', response.headers.get('Authorization').split('Bearer ')[1]);
+      sessionStorage.setItem('currentUser', this.state.email)
       return response.json();
     }).then(parsedResponse => this.storeInformation(parsedResponse) );
     evt.preventDefault();
