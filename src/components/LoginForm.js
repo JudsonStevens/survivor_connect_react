@@ -17,8 +17,7 @@ class LoginForm extends Component {
     touched: {
       email:                false,
       password:             false
-    },
-
+      }
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,9 +54,9 @@ class LoginForm extends Component {
     this.setState({
       responseBody: info,
       loading: false,
-      redirect: true,
+      redirect: true
     })
-    sessionStorage.setItem('currentUser', this.state.responseBody.email)
+    sessionStorage.setItem('currentUser', this.state.responseBody.email)    
   }
 
   // Devise expects the login information to come in as a specific hash with user as the key.

@@ -10,6 +10,7 @@ import Contact from './Contact'
 import Share from './Share'
 import Donate from './Donate'
 import Login from './Login'
+import Logout from './Logout'
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path='/donate' exact component={Donate} />
           <Route path='/share' exact component={Share} />
           <Route path='/login' exact component={Login} />
+          <Route path='/logout' exact component={Logout} />
           <Route component={NotFound} />
         </Switch>
       </Router>
