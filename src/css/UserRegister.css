@@ -9,3 +9,48 @@
   left: 0;
   overflow: auto;
 }
+
+.footer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  margin-top: 9%; 
+  grid-row-start: 2;
+  grid-row-end: 3;
+  /* height: 25%;  */
+  /* border: 1px solid black; */
+}
+
+.signal-blurb {
+  white-space: pre;
+  padding-bottom: 1%;
+  margin: auto;
+}
+
+.footer p {
+  justify-content: center;
+  font-size: .8em;
+}
+
+.credits {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.credits p {
+  margin: 0 auto 3% auto;
+  color: black;
+  font-size: 1em;
+  white-space: pre;
+}
+
+.credits a {
+  color: #A38FA4;
+}
+
+.credits a:hover {
+  color:black;
+}
