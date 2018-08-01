@@ -29,6 +29,7 @@ class Login extends Component {
               <a href="https://unsplash.com/@acharki95">Aziz Acharki</a>,{'  '}
               <a href="https://unsplash.com/@sharonmccutcheon">Sharon McCutcheon</a>,{'  '} 
               <a href="https://unsplash.com/@adrianpelletier">Adrian Pelletier</a>,{'  '} 
+              <a href="https://unsplash.com/@__matthoffman__">Matt Hoffman</a>,{'  '}
               <a href="https://unsplash.com/@pichler_sebastian">Sebastian Pichler</a></p>{'  '}
             </div>
           </div>

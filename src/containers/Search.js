@@ -22,7 +22,7 @@ class Search extends Component {
         <div className="about-text">
           <h1> Survivor Connect </h1>
           <p>Survivor Connect is designed to help survivors of domestic violence and sexual assault find attorneys in their area who offer pro bono legal services.</p>
-          <p><a href='/support' >Click here to learn more about Survivor Connect.</a></p>
+          <p><a href="/support" >Click here to learn more about Survivor Connect.</a></p>
         </div>
         <span className="second-parallax">
         </span>
@@ -41,6 +41,7 @@ class Search extends Component {
               <a href="https://unsplash.com/@acharki95">Aziz Acharki</a>,{'  '}
               <a href="https://unsplash.com/@sharonmccutcheon">Sharon McCutcheon</a>,{'  '} 
               <a href="https://unsplash.com/@adrianpelletier">Adrian Pelletier</a>,{'  '} 
+              <a href="https://unsplash.com/@__matthoffman__">Matt Hoffman</a>,{'  '}
               <a href="https://unsplash.com/@pichler_sebastian">Sebastian Pichler</a></p>{'  '}
             </div>
           </div>
