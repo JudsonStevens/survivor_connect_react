@@ -6,13 +6,13 @@ import { API_Url } from '../api/APIUrls'
 class EditProfileForm extends Component {
   constructor(props ) {
     super(props);
-    this.state = this.state = {
-      firstName:              '',
-      lastName:               '',
-      email:                  '',
-      streetAddress:          '',
-      city:                   '',
-      state:                  '',
+    this.state = {
+      firstName:              this.props.name.split(' ')[0],
+      lastName:               this.props.nam
+      email:                  this.props.email,
+      streetAddress:          this.props.streetAddress,
+      city:                   this.props.city,
+      state:                  this.props.state,
       zipCode:                '',
       phoneNumber:            '',
       password:               '',
