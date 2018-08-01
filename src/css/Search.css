@@ -112,6 +112,7 @@ div.ui.container.grid {
   text-align: center;
   grid-row-start: 2;
   grid-row-end: 3;
+  margin-top: 0 !important;
   /* height: 25%;  */
   /* border: 1px solid black; */
 }
