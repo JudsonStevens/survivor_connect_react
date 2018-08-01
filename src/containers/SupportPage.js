@@ -28,7 +28,7 @@ class SupportPage extends Component {
             <Grid.Column id="inset-column">
               <Container id="support-container">
                 <Header id="support-header">
-                  Suport Survivor Connect
+                  Support Survivor Connect
                 </Header>
                 <Card.Group container columns={2}>
                   <Card id='donate_card'>
