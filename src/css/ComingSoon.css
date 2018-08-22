@@ -12,6 +12,7 @@
 }
 
 .coming-soon-text h2 {
+  font-family: 'Lusitana', serif;
   display: flex;
   justify-content: center;
   padding: 4em 0em 0em 0em;
@@ -21,6 +22,7 @@
 }
 
 .coming-soon-text p {
+  font-family: 'Lusitana', serif;
   display: flex;
   justify-content: center;
   font-size: 2em;

@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Lusitana');
+
 .home-page {
+  font-family: 'Lusitana', serif;
   height: 100%;
   width: 100%;
   display: flex;
@@ -21,6 +24,7 @@ div.ui.stackable.menu {
 }
 
 .about-text h1 {
+  font-family: 'Lusitana', serif;
   font-size: 3em;
   padding: -1em;
   line-height: 2em;
@@ -31,7 +35,7 @@ div.ui.stackable.menu {
   justify-content: center;
   font-size: 1.5em;
   padding: 0% 0% 1% 0%;
-  font-family: 'Forum';
+  font-family: 'Lusitana', serif;
   margin-bottom: 0.5em !important;
 }
 
@@ -118,6 +122,7 @@ div.ui.container.grid {
 }
 
 .signal-blurb {
+  font-family: 'Lusitana', serif;
   white-space: pre;
   padding-bottom: 1%;
   margin: 0em .5em .5em .5em;
@@ -129,6 +134,7 @@ div.ui.container.grid {
 }
 
 .credits {
+  font-family: 'Lusitana', serif;
   background-color: white;
   display: flex;
   justify-content: center;

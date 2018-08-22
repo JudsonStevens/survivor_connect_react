@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lusitana');
+
 div#form-container {
   text-align: center;
 }
 
 div.ui.header {
+  font-family: 'Lusitana', serif;
   margin-top: 15% !important;
   font-size: 3.8em !important;
   color: white;
@@ -10,6 +13,7 @@ div.ui.header {
 }
 
 form {
+  font-family: 'Lusitana', serif;
   overflow: hidden;
   display: inline-block;
   top: 2%;
@@ -19,5 +23,10 @@ form {
 }
 
 div.ui.icon.input {
+  font-family: 'Lusitana', serif;
   width: 100%;
+}
+
+#search-input-text {
+  font-family: 'Lusitana', serif;
 }

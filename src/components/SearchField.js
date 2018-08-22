@@ -58,6 +58,7 @@ class SearchField extends Component {
         </Header>
         <form onSubmit={this.handleSubmit}>
           <Search
+            id="search-input-text"
             onSearchChange={this.handleSearchChange}
             type='text'
             value={this.state.value}

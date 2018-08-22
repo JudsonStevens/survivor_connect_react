@@ -1,8 +1,9 @@
 .register-body-div {
-  background: linear-gradient(rgba(252, 250, 250, 0.2), rgba(235, 235, 235, 0.2)), url(../images/user-register.jpg);
+  font-family: 'Lusitana', serif;
+  background: linear-gradient(rgba(252, 250, 250, 0.004), rgba(235, 235, 235, .001)), url(../images/user-register.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
+  width: 95%;
   height: 80%;
   position: relative;
   top: 0;
@@ -11,14 +12,17 @@
 }
 
 #registration-header {
+  font-family: 'Lusitana', serif;
   margin-top: 0;
 }
 
 .register-form-header {
+  font-family: 'Lusitana', serif;
   color: white;
 }
 
 .footer {
+  font-family: 'Lusitana', serif;  
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -32,6 +36,7 @@
 }
 
 .signal-blurb {
+  font-family: 'Lusitana', serif;
   white-space: pre;
   padding-bottom: 1%;
   margin: auto;
@@ -43,6 +48,7 @@
 }
 
 .credits {
+  font-family: 'Lusitana', serif;
   background-color: white;
   display: flex;
   justify-content: center;
