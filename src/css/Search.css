@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lusitana');
 
 .home-page {
+  font-family: 'Lusitana', serif;
   height: 100%;
   width: 100%;
   display: flex;
@@ -23,6 +24,7 @@ div.ui.stackable.menu {
 }
 
 .about-text h1 {
+  font-family: 'Lusitana', serif;
   font-size: 3em;
   padding: -1em;
   line-height: 2em;
