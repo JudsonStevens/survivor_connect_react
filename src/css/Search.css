@@ -119,6 +119,7 @@ div.ui.container.grid {
 }
 
 .signal-blurb {
+  font-family: 'Lusitana', serif;
   white-space: pre;
   padding-bottom: 1%;
   margin: 0em .5em .5em .5em;
@@ -130,6 +131,7 @@ div.ui.container.grid {
 }
 
 .credits {
+  font-family: 'Lusitana', serif;
   background-color: white;
   display: flex;
   justify-content: center;
