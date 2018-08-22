@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Forum');
+@import url('https://fonts.googleapis.com/css?family=Lusitana');
 
 #root {
   height: 100%;
@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Lusitana', serif;
 }
 
 #base-container {
